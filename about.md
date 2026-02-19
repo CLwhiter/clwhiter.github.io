@@ -26,49 +26,50 @@ titles:
 key: page-about
 ---
 
-![TeXt Theme](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg)
+# 你好!我是 春林 👋
 
-TeXt is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.
+我是一名汽车电子嵌入式软件工程师,专注于车载系统和嵌入式开发。
 
-```javascript
-(() => console.log('Hello, World!'))();
-```
+## 技术栈
 
-## Features
+**编程语言:**
+- C/C++ - 嵌入式开发的主力语言
+- Python - 脚本和工具开发
+- 其他编程语言 - 持续学习中
 
-- Responsive
-- Semantic HTML
-- Skins
-- Highlight Theme
-- Internationalization
-- Search
-- Table of contents
-- Authors
-- Additional styles (alert, tag, image, icon, button, grid, etc)
-- Extensions (audios, videos, slides, demos)
-- Markdown enhancements ([MathJax](https://www.mathjax.org/), [mermaid](https://mermaidjs.github.io/), [chartjs](http://www.chartjs.org/))
-- Sharing ([AddToAny](https://www.addtoany.com/), [AddThis](https://www.addthis.com/))
-- Comments ([Disqus](https://disqus.com/), [Gitalk](https://gitalk.github.io/), [Valine](https://valine.js.org/en/))
-- Pageview ([LeanCloud](https://leancloud.cn/))
-- Analytics ([Google Analytics](https://analytics.google.com/analytics/web/))
-- RSS ([jekyll-feed](https://github.com/jekyll/jekyll-feed))
+**嵌入式开发:**
+- CAN总线通信
+- RTOS(实时操作系统)
+- 芯片架构和底层驱动
+- 嵌入式系统调试
 
-## Skins
+**开发工具:**
+- Git - 版本控制
+- Makefile - 构建工具
+- 各类调试工具和分析工具
 
-TeXt has 6 built-in skins, you can also set up your own skin.
+## 兴趣爱好
 
-| `default` | `dark` | `forest` |
-| --- |  --- | --- |
-| ![Default](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_default.jpg) | ![Dark](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_dark.jpg) | ![Forest](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_forest.jpg) |
+- 技术学习: 持续关注新技术和行业动态
+- 开源项目: 参与和贡献开源社区
+- 技术分享: 记录学习心得,分享实践经验
 
-| `ocean` | `chocolate` | `orange` |
-| --- |  --- | --- |
-| ![Ocean](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.jpg) | ![Chocolate](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.jpg) | ![Orange](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.jpg) |
+## 关于这个博客
 
-### Highlight Theme
+这个博客是我记录学习和成长历程的地方。我会在这里分享:
 
-TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highlight theme.
+**技术相关:**
+- 嵌入式开发心得和技巧
+- 汽车电子技术探索
+- 编程实践和最佳实践
+- 技术工具和资源推荐
 
-| `tomorrow` | `tomorrow-night` | `tomorrow-night-eighties` | `tomorrow-night-blue` | `tomorrow-night-bright` |
-| --- |  --- | --- | --- |  --- |
-| ![Tomorrow](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png) | ![Tomorrow Night](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png) | ![Tomorrow Night Eighties](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png) | ![Tomorrow Night Blue](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png) | ![Tomorrow Night Bright](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png) |
+**生活与兴趣:**
+- 日常思考和感悟
+- 学习笔记和心得
+- 兴趣爱好和生活点滴
+- 职业发展思考
+
+我相信分享是最好的学习方式,希望通过这个博客记录我的学习历程,也希望能与其他开发者交流讨论,共同成长。
+
+期待与你交流! 🤝
