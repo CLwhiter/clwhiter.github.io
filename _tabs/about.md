@@ -4,5 +4,10 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+你好，欢迎来到我的技术博客。
+
+我是一名汽车电子软件工程师，主要从事 MCU 开发和 AUTOSAR 系统服务相关的工作。在日常工作中，我会接触到嵌入式系统设计、安全启动流程、CAN/LIN 通信协议等内容。
+
+除了嵌入式开发，我也对 AI/LLM 领域保持着浓厚的兴趣，探索如何将大语言模型应用到开发工作流中，提升效率。
+
+这个博客用来记录我在工作中遇到的技术问题和解决方案，希望能给同行提供一些参考。内容主要围绕汽车电子、嵌入式开发和 AI/LLM 三个方向。
