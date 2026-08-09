@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#1a1a2e"/>
-  <text x="600" y="280" text-anchor="middle" fill="#e0e0e0" font-size="36" font-family="sans-serif">芯驰科技 E3640 MCU</text>
-  <text x="600" y="340" text-anchor="middle" fill="#e0e0e0" font-size="28" font-family="sans-serif">安全启动流程分析</text>
+  <text x="600" y="280" text-anchor="middle" fill="#e0e0e0" font-size="36" font-family="sans-serif">安全启动流程分析</text>
+  <text x="600" y="340" text-anchor="middle" fill="#e0e0e0" font-size="28" font-family="sans-serif">MCU安全启动流程</text>
   <text x="600" y="420" text-anchor="middle" fill="#888" font-size="18" font-family="sans-serif">Secure Boot Analysis</text>
 </svg>
