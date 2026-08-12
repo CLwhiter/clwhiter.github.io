@@ -82,6 +82,17 @@
     border-radius: 0.25rem;
     transition: background-color 0.15s ease, color 0.15s ease;
   }
+
+  /* G-05-2 UAT refinement: with the toggle now the first child of #topbar, the
+     d-flex justify-content-between layout was centering #breadcrumb (the 2nd of
+     3 visible desktop children). margin-right:auto absorbs the free space so the
+     layout becomes [toggle][breadcrumb] …auto… [search-trigger] — both toggle
+     and breadcrumb anchor left, search controls pushed far right (restores the
+     pre-toggle left alignment of the breadcrumb). Desktop-only: scoped to this
+     media block, so <850px (where the toggle is display:none) is unaffected. */
+  #breadcrumb {
+    margin-right: auto;
+  }
 }
 
 /* D-02 / NAV-07 / Pitfall 4: below lg the toggle is hidden and the mobile off-canvas
