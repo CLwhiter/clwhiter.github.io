@@ -1,0 +1,25 @@
+<!-- metadata-hook.html (shadowed for Phase 5) -->
+<!-- A placeholder to allow defining custom metadata -->
+
+<!-- D-05 / NAV-06: apply the persisted collapsed state BEFORE <body> paints.
+     This inline script runs synchronously during <head> parse, so the
+     data-sidebar-collapsed attribute is on <html> before the sidebar/main are
+     rendered — eliminating the slide-away-on-load flash. The sb-transition-paused
+     class disables CSS transitions for the first painted frame; the deferred
+     sidebar-collapse.js removes it after a double-rAF. -->
+<script>
+  (function () {
+    try {
+      if (localStorage.getItem('sidebar-collapsed') === 'true') {
+        var d = document.documentElement;
+        d.setAttribute('data-sidebar-collapsed', '');
+        d.classList.add('sb-transition-paused');
+      }
+    } catch (e) {
+      /* localStorage unavailable (private mode / storage disabled) — default expanded */
+    }
+  })();
+</script>
+
+<!-- Behavior script: click handler, aria updates, double-rAF transition unpause, persist -->
+<script defer src="{{ '/assets/js/sidebar-collapse.js' | relative_url }}"></script>
