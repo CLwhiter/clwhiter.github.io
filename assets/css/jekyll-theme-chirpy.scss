@@ -65,9 +65,22 @@
     transition: none !important;
   }
 
-  /* D-02: the toggle is visible only on desktop (>=lg) */
+  /* D-02: the toggle is visible only on desktop (>=lg).
+     G-05-2 prominence: explicit font-size + line-height keep the glyph from
+     inheriting the default ~1rem (quieter than the sibling fa-fw icon
+     buttons); min-width/min-height + padding give a comfortable tap target
+     for tablet-landscape touch (>=850px shows the button). */
   #sidebar-collapse {
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    line-height: 1;
+    min-width: 2rem;
+    min-height: 2rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
   }
 }
 
@@ -90,8 +103,11 @@ html[data-sidebar-collapsed] #sidebar-collapse .collapse-glyph::after {
   content: '\00BB'; /* » collapsed */
 }
 
-/* D-07: pale-gold brand accent on hover/focus (Lux Sylva color locked in Phase 4) */
+/* D-07: pale-gold brand accent on hover/focus (Lux Sylva color locked in Phase 4).
+   G-05-2 prominence: a subtle translucent pale-gold fill improves affordance
+   without introducing a new color (reinforces, does not replace, the accent). */
 #sidebar-collapse:hover,
 #sidebar-collapse:focus-visible {
   color: #FDD98F;
+  background-color: rgba(253, 217, 143, 0.12);
 }
