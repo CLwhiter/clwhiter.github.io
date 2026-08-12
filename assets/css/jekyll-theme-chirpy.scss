@@ -103,16 +103,18 @@
   }
 }
 
-/* D-06: direction-aware chevron glyph, CSS-driven (no JS needed for the glyph).
-   «  = currently expanded (click to push the sidebar away)
-   »  = currently collapsed (click to pull it back)
-   The glyph reflects the CURRENT state, not the pending action. */
-#sidebar-collapse .collapse-glyph::after {
-  content: '\00AB'; /* « expanded */
-}
-html[data-sidebar-collapsed] #sidebar-collapse .collapse-glyph::after {
-  content: '\00BB'; /* » collapsed */
-}
+/* D-06: sidebar-panel toggle icon, CSS-driven (no JS needed for the glyph).
+   The <span class="collapse-glyph"> holds two inline SVGs; CSS toggles which
+   one renders via the html[data-sidebar-collapsed] hook set by sidebar-collapse.js.
+   .glyph-expanded  = filled slab on the left (sidebar is OPEN)
+   .glyph-collapsed = thin hollow rail flush left (sidebar is HIDDEN/tucked)
+   Both SVGs use currentColor, so they inherit the default text color AND the
+   #FDD98F hover/focus accent from the D-07 rule below. The glyph reflects the
+   CURRENT state, not the pending action. */
+#sidebar-collapse .collapse-glyph .glyph-collapsed { display: none; }
+#sidebar-collapse .collapse-glyph .glyph-expanded { display: inline-block; }
+html[data-sidebar-collapsed] #sidebar-collapse .collapse-glyph .glyph-expanded { display: none; }
+html[data-sidebar-collapsed] #sidebar-collapse .collapse-glyph .glyph-collapsed { display: inline-block; }
 
 /* D-07: pale-gold brand accent on hover/focus (Lux Sylva color locked in Phase 4).
    G-05-2 prominence: a subtle translucent pale-gold fill improves affordance

@@ -10,10 +10,22 @@
          justify-content-between layout seats it at the LEFT edge, next to the left
          sidebar it toggles (G-05-2 placement fix). Desktop-only (D-02): hidden below
          850px via SCSS so the mobile off-canvas hamburger (#sidebar-trigger) stays the
-         sole narrow-screen control (NAV-07). Glyph is filled by CSS (D-06); this <span>
-         is always empty and never receives user input. -->
+         sole narrow-screen control (NAV-07). Glyph is an inline-SVG pair (D-06):
+         .glyph-expanded (filled slab, sidebar open) shows by default;
+         .glyph-collapsed (hollow rail, sidebar hidden) shows under
+         html[data-sidebar-collapsed]. Both SVGs use currentColor so they inherit
+         the #FDD98F hover/focus accent (D-07). The <span> never receives user input. -->
     <button type="button" id="sidebar-collapse" class="btn btn-link" aria-expanded="true" aria-label="Collapse sidebar">
-      <span class="collapse-glyph" aria-hidden="true"></span>
+      <span class="collapse-glyph" aria-hidden="true">
+        <svg class="glyph-expanded" viewBox="0 0 38 38" width="20" height="20" focusable="false" fill="none" role="img">
+          <rect x="1" y="3.65" width="36" height="30.69" rx="6" ry="6" stroke="currentColor" stroke-width="2"></rect>
+          <rect x="4.38" y="9.5" width="5.85" height="20.46" rx="1.5" fill="currentColor"></rect>
+        </svg>
+        <svg class="glyph-collapsed" viewBox="0 0 38 38" width="20" height="20" focusable="false" fill="none" role="img">
+          <rect x="1" y="3.65" width="36" height="30.69" rx="6" ry="6" stroke="currentColor" stroke-width="2"></rect>
+          <rect x="3.2" y="9.5" width="3.2" height="20.46" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"></rect>
+        </svg>
+      </span>
     </button>
 
     <nav id="breadcrumb" aria-label="Breadcrumb">
