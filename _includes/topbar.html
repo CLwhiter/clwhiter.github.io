@@ -5,6 +5,17 @@
     id="topbar"
     class="d-flex align-items-center justify-content-between px-lg-3 h-100"
   >
+    <!-- Phase 5 (D-01): collapsible desktop sidebar toggle — the ONLY collapse/expand
+         affordance, works in both states. FIRST child of #topbar so the d-flex
+         justify-content-between layout seats it at the LEFT edge, next to the left
+         sidebar it toggles (G-05-2 placement fix). Desktop-only (D-02): hidden below
+         850px via SCSS so the mobile off-canvas hamburger (#sidebar-trigger) stays the
+         sole narrow-screen control (NAV-07). Glyph is filled by CSS (D-06); this <span>
+         is always empty and never receives user input. -->
+    <button type="button" id="sidebar-collapse" class="btn btn-link" aria-expanded="true" aria-label="Collapse sidebar">
+      <span class="collapse-glyph" aria-hidden="true"></span>
+    </button>
+
     <nav id="breadcrumb" aria-label="Breadcrumb">
       {% assign paths = page.url | split: '/' %}
 
@@ -72,15 +83,6 @@
     </search>
     <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
       {{- site.data.locales[include.lang].search.cancel -}}
-    </button>
-
-    <!-- Phase 5 (D-01): collapsible desktop sidebar toggle — the ONLY collapse/expand
-         affordance, works in both states. Desktop-only (D-02): hidden below 850px via
-         SCSS so the mobile off-canvas hamburger (#sidebar-trigger) stays the sole
-         narrow-screen control (NAV-07). Glyph is filled by CSS (D-06); this <span>
-         is always empty and never receives user input. -->
-    <button type="button" id="sidebar-collapse" class="btn btn-link" aria-expanded="true" aria-label="Collapse sidebar">
-      <span class="collapse-glyph" aria-hidden="true"></span>
     </button>
   </div>
 </header>
