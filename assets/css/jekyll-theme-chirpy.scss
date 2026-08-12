@@ -106,15 +106,26 @@
 /* D-06: sidebar-panel toggle icon, CSS-driven (no JS needed for the glyph).
    The <span class="collapse-glyph"> holds two inline SVGs; CSS toggles which
    one renders via the html[data-sidebar-collapsed] hook set by sidebar-collapse.js.
-   .glyph-expanded  = filled slab on the left (sidebar is OPEN)
-   .glyph-collapsed = thin hollow rail flush left (sidebar is HIDDEN/tucked)
-   Both SVGs use currentColor, so they inherit the default text color AND the
-   #FDD98F hover/focus accent from the D-07 rule below. The glyph reflects the
-   CURRENT state, not the pending action. */
+   .glyph-expanded  = wide filled slab inset from the left (sidebar is OPEN)
+   .glyph-collapsed = thin filled rail flush to the left edge (sidebar is HIDDEN/tucked)
+   Both states are FILLED so the collapsed state stays as visible as the expanded
+   one (the earlier hollow rail was too subtle). Both SVGs use currentColor, so they
+   inherit the default text color AND the #FDD98F hover/focus accent from D-07 below.
+   The glyph reflects the CURRENT state, not the pending action. */
+/* Vertical centering: make .collapse-glyph a centered flex container and render the
+   visible SVG as a block, so the icon is NOT placed on the inline baseline (baseline
+   placement sits low relative to the breadcrumb text). line-height:0 removes any
+   residual line-box descender space. */
+#sidebar-collapse .collapse-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
 #sidebar-collapse .collapse-glyph .glyph-collapsed { display: none; }
-#sidebar-collapse .collapse-glyph .glyph-expanded { display: inline-block; }
+#sidebar-collapse .collapse-glyph .glyph-expanded { display: block; }
 html[data-sidebar-collapsed] #sidebar-collapse .collapse-glyph .glyph-expanded { display: none; }
-html[data-sidebar-collapsed] #sidebar-collapse .collapse-glyph .glyph-collapsed { display: inline-block; }
+html[data-sidebar-collapsed] #sidebar-collapse .collapse-glyph .glyph-collapsed { display: block; }
 
 /* D-07: pale-gold brand accent on hover/focus (Lux Sylva color locked in Phase 4).
    G-05-2 prominence: a subtle translucent pale-gold fill improves affordance
