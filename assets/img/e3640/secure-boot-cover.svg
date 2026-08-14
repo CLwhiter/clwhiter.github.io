@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1a1a2e"/>
+  <text x="600" y="280" text-anchor="middle" fill="#e0e0e0" font-size="36" font-family="sans-serif">芯驰 E3640 安全启动剖析</text>
+  <text x="600" y="340" text-anchor="middle" fill="#e0e0e0" font-size="28" font-family="sans-serif">五道校验关 · 信任链 · Boot Package</text>
+  <text x="600" y="420" text-anchor="middle" fill="#888" font-size="18" font-family="sans-serif">Semidrive E3640 Secure Boot</text>
+  <text x="600" y="560" text-anchor="middle" fill="#555" font-size="16" font-family="sans-serif">占位图 · 作者后续生成</text>
+</svg>
