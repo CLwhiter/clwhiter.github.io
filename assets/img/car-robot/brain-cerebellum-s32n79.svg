@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720">
+  <rect width="960" height="720" fill="#1a1a2e"/>
+  <text x="480" y="320" text-anchor="middle" fill="#e0e0e0" font-size="32" font-family="sans-serif">S32N79：大脑 + 小脑单芯片部署</text>
+  <text x="480" y="380" text-anchor="middle" fill="#e0e0e0" font-size="24" font-family="sans-serif">8× Cortex-A78AE + 12× Cortex-R52（大脑/小脑为本文类比）</text>
+  <text x="480" y="560" text-anchor="middle" fill="#555" font-size="16" font-family="sans-serif">占位图 · 作者后续生成</text>
+</svg>
