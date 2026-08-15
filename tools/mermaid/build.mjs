@@ -90,7 +90,11 @@ await esbuild.build({
   bundle: true,
   minify: true,
   format: 'iife',
-  globalName: 'mermaid',
+  // NOTE: no globalName. With globalName esbuild emits a top-level
+  // `var mermaid = <module namespace>` that runs AFTER the entry's
+  // globalThis assignment and overwrites window.mermaid with the bare
+  // namespace `{default: ...}` — breaking the Chirpy contract. The explicit
+  // `(globalThis.mermaid = mermaid)` in entry.mjs is the sole global attach.
   legalComments: 'none',
   outfile: OUTFILE,
   plugins: [trimPlugin],
