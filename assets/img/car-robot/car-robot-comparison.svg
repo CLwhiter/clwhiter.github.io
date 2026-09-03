@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720">
-  <rect width="960" height="720" fill="#1a1a2e"/>
-  <text x="480" y="320" text-anchor="middle" fill="#e0e0e0" font-size="32" font-family="sans-serif">汽车 vs 机器人：三大支柱对比</text>
-  <text x="480" y="380" text-anchor="middle" fill="#e0e0e0" font-size="24" font-family="sans-serif">能源 / 执行 / 通信 → 集中计算 + 分布式执行</text>
-  <text x="480" y="560" text-anchor="middle" fill="#555" font-size="16" font-family="sans-serif">占位图 · 作者后续生成</text>
-</svg>
