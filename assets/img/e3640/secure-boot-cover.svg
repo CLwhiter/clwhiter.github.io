@@ -1,7 +1,102 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#1a1a2e"/>
-  <text x="600" y="280" text-anchor="middle" fill="#e0e0e0" font-size="36" font-family="sans-serif">芯驰 E3640 安全启动剖析</text>
-  <text x="600" y="340" text-anchor="middle" fill="#e0e0e0" font-size="28" font-family="sans-serif">五道校验关 · 信任链 · Boot Package</text>
-  <text x="600" y="420" text-anchor="middle" fill="#888" font-size="18" font-family="sans-serif">Semidrive E3640 Secure Boot</text>
-  <text x="600" y="560" text-anchor="middle" fill="#555" font-size="16" font-family="sans-serif">占位图 · 作者后续生成</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0c1929"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="lock-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- 网格装饰 -->
+  <g stroke="#1e3a5f" stroke-width="0.5" opacity="0.35">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- 左侧：锁图标（缩小到70%） -->
+  <g transform="translate(225, 230) scale(0.7)" filter="url(#glow-strong)">
+    <!-- 锁梁 -->
+    <path d="M 35 90 L 35 45 A 65 65 0 0 1 165 45 L 165 90" fill="none" stroke="url(#lock-grad)" stroke-width="6" stroke-linecap="round"/>
+    <!-- 锁身 -->
+    <rect x="10" y="85" width="180" height="140" rx="16" fill="none" stroke="url(#lock-grad)" stroke-width="6"/>
+    <!-- 锁孔外圈 -->
+    <circle cx="100" cy="140" r="22" fill="none" stroke="url(#lock-grad)" stroke-width="4"/>
+    <!-- 锁孔内圈 -->
+    <circle cx="100" cy="140" r="10" fill="url(#lock-grad)" opacity="0.6"/>
+    <!-- 锁孔钥匙槽 -->
+    <rect x="94" y="155" width="12" height="28" rx="4" fill="url(#lock-grad)" opacity="0.6"/>
+  </g>
+
+  <!-- 信任节点装饰 -->
+  <g filter="url(#glow)">
+    <circle cx="155" cy="195" r="5" fill="#38bdf8"/>
+    <line x1="160" y1="200" x2="225" y2="250" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+    <circle cx="400" cy="430" r="5" fill="#c084fc"/>
+    <line x1="395" y1="425" x2="355" y2="380" stroke="#c084fc" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+    <circle cx="410" cy="210" r="4" fill="#818cf8" opacity="0.7"/>
+    <line x1="405" y1="215" x2="365" y2="255" stroke="#818cf8" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+  </g>
+
+  <!-- 右侧：标题（放大） -->
+  <text x="530" y="290" font-size="56" font-weight="bold" fill="#f1f5f9">芯驰 E3640</text>
+  <text x="530" y="358" font-size="56" font-weight="bold" fill="url(#accent)">安全启动剖析</text>
+  <text x="530" y="400" font-size="22" fill="#94a3b8">Semidrive E3640 Secure Boot Deep Dive</text>
+
+  <!-- 分隔线 -->
+  <line x1="530" y1="425" x2="870" y2="425" stroke="url(#accent)" stroke-width="2"/>
+
+  <!-- 标签 -->
+  <g font-size="15" fill="#64748b">
+    <text x="530" y="462">Boot Package 结构</text>
+    <text x="695" y="462">·</text>
+    <text x="715" y="462">BPT 字节级字段</text>
+    <text x="530" y="490">五步校验流程</text>
+    <text x="695" y="490">·</text>
+    <text x="715" y="490">裸 PKCS#1 v1.5 签名</text>
+  </g>
+
+  <!-- 底部字节流装饰 -->
+  <g font-size="11" fill="#1e3a5f" font-family="monospace">
+    <text x="60" y="590">00 01 FF FF FF FF FF FF 00 30 31 30 0D 06 09 60 86 48 01 65 03 04 02 01 05 00 04 20</text>
+    <text x="60" y="610">A1 B2 C3 D4 E5 F6 07 18 29 3A 4B 5C 6D 7E 8F 90 A1 B2 C3 D4 E5 F6 07 18 29 3A 4B 5C 6D 7E 8F 90</text>
+  </g>
+
+  <!-- 右上角装饰 -->
+  <circle cx="1100" cy="80" r="60" fill="none" stroke="#1e3a5f" stroke-width="1" opacity="0.5"/>
+  <circle cx="1100" cy="80" r="40" fill="none" stroke="#1e3a5f" stroke-width="1" opacity="0.5"/>
+  <circle cx="1100" cy="80" r="20" fill="none" stroke="#1e3a5f" stroke-width="1" opacity="0.5"/>
 </svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect width="880" height="300" fill="#ffffff"/>
+  <text x="40" y="30" font-size="14" font-weight="bold" fill="#2c3e50">EM 字节结构对比（RSA2048，共 256 字节）</text>
+  <!-- RFC 8017 -->
+  <text x="40" y="65" font-size="13" font-weight="bold" fill="#2c3e50">RFC 8017 标准（PKCS#1 v1.5）</text>
+  <rect x="40" y="80" width="50" height="40" rx="3" fill="#eaecee" stroke="#7f8c8d" stroke-width="1"/>
+  <text x="65" y="105" text-anchor="middle" font-size="11" fill="#2c3e50">00 01</text>
+  <rect x="90" y="80" width="180" height="40" rx="3" fill="#fadbd8" stroke="#e74c3c" stroke-width="1"/>
+  <text x="180" y="105" text-anchor="middle" font-size="11" fill="#2c3e50">FF … FF（PS 填充）</text>
+  <rect x="270" y="80" width="30" height="40" rx="3" fill="#fdebd0" stroke="#f39c12" stroke-width="1"/>
+  <text x="285" y="105" text-anchor="middle" font-size="11" fill="#2c3e50">00</text>
+  <rect x="300" y="80" width="120" height="40" rx="3" fill="#e8daef" stroke="#8e44ad" stroke-width="1.5"/>
+  <text x="360" y="100" text-anchor="middle" font-size="11" font-weight="bold" fill="#8e44ad">DER DigestInfo</text>
+  <text x="360" y="116" text-anchor="middle" font-size="9" fill="#7f8c8d">19 字节（声明 SHA256）</text>
+  <rect x="420" y="80" width="100" height="40" rx="3" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="470" y="105" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c3e50">SHA256 (32B)</text>
+  <!-- 裸 PKCS#1 v1.5 -->
+  <text x="40" y="165" font-size="13" font-weight="bold" fill="#2c3e50">裸 PKCS#1 v1.5 签名（无 DER 前缀）</text>
+  <rect x="40" y="180" width="50" height="40" rx="3" fill="#eaecee" stroke="#7f8c8d" stroke-width="1"/>
+  <text x="65" y="205" text-anchor="middle" font-size="11" fill="#2c3e50">00 01</text>
+  <rect x="90" y="180" width="180" height="40" rx="3" fill="#fadbd8" stroke="#e74c3c" stroke-width="1"/>
+  <text x="180" y="205" text-anchor="middle" font-size="11" fill="#2c3e50">FF … FF（PS 填充）</text>
+  <rect x="270" y="180" width="30" height="40" rx="3" fill="#fdebd0" stroke="#f39c12" stroke-width="1"/>
+  <text x="285" y="205" text-anchor="middle" font-size="11" fill="#2c3e50">00</text>
+  <rect x="300" y="180" width="120" height="40" rx="3" fill="#fdedec" stroke="#e74c3c" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="360" y="198" text-anchor="middle" font-size="11" font-weight="bold" fill="#e74c3c">无 DER 前缀</text>
+  <text x="360" y="214" text-anchor="middle" font-size="9" fill="#e74c3c">（省略 DigestInfo）</text>
+  <rect x="420" y="180" width="100" height="40" rx="3" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="470" y="205" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c3e50">SHA256 (32B)</text>
+  <!-- 解码范围标注 -->
+  <line x1="285" y1="235" x2="520" y2="235" stroke="#27ae60" stroke-width="2"/>
+  <line x1="285" y1="230" x2="285" y2="240" stroke="#27ae60" stroke-width="2"/>
+  <line x1="520" y1="230" x2="520" y2="240" stroke="#27ae60" stroke-width="2"/>
+  <text x="402" y="255" text-anchor="middle" font-size="11" fill="#27ae60" font-weight="bold">解码：分隔字节 0x00 之后全部直接当作哈希（不解析 DER）</text>
+  <!-- 底部说明 -->
+  <text x="40" y="285" font-size="11" fill="#7f8c8d">后果：Python Crypto.Signature.pkcs1_15 等标准库按"带 DER"解析，验此类裸签名会失败。需用原始 RSA 运算 + 手动比对哈希。</text>
+</svg>

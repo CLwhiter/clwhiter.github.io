@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e67e22"/>
+    </marker>
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#2c3e50" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="800" height="360" fill="#ffffff"/>
+
+  <!-- bootROM -->
+  <rect x="40" y="50" width="160" height="80" rx="8" fill="#ebf5fb" stroke="#2980b9" stroke-width="2" filter="url(#card-shadow)"/>
+  <text x="120" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">bootROM</text>
+  <text x="120" y="108" text-anchor="middle" font-size="12" fill="#7f8c8d">片内 ROM · 不可改写</text>
+  <circle cx="120" cy="130" r="4" fill="#e67e22"/>
+
+  <!-- bootloader -->
+  <rect x="320" y="50" width="160" height="80" rx="8" fill="#eafaf1" stroke="#27ae60" stroke-width="2" filter="url(#card-shadow)"/>
+  <text x="400" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">bootloader</text>
+  <text x="400" y="108" text-anchor="middle" font-size="12" fill="#7f8c8d">Flash · 已被 bootROM 验证</text>
+  <circle cx="360" cy="130" r="4" fill="#e67e22"/>
+
+  <!-- APP -->
+  <rect x="600" y="50" width="160" height="80" rx="8" fill="#fef9e7" stroke="#f39c12" stroke-width="2" filter="url(#card-shadow)"/>
+  <text x="680" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">APP</text>
+  <text x="680" y="108" text-anchor="middle" font-size="12" fill="#7f8c8d">Flash · 待 bootloader 验证</text>
+
+  <!-- 主流程箭头 bootROM -> bootloader -->
+  <line x1="200" y1="90" x2="320" y2="90" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="260" y="80" text-anchor="middle" font-size="12" fill="#2c3e50">4 步校验</text>
+
+  <!-- 主流程箭头 bootloader -> APP -->
+  <line x1="480" y1="90" x2="600" y2="90" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="540" y="80" text-anchor="middle" font-size="12" fill="#2c3e50">5 步校验</text>
+
+  <!-- eFuse -->
+  <rect x="280" y="240" width="240" height="70" rx="8" fill="#fdedec" stroke="#e74c3c" stroke-width="2" filter="url(#card-shadow)"/>
+  <text x="400" y="270" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">eFuse (OTP)</text>
+  <text x="400" y="292" text-anchor="middle" font-size="12" fill="#7f8c8d">ROTPK1 公钥哈希 · PROD 生命周期位</text>
+  <!-- eFuse 连接点 -->
+  <circle cx="280" cy="275" r="4" fill="#e67e22"/>
+  <circle cx="360" cy="240" r="4" fill="#e67e22"/>
+
+  <!-- bootROM 线：eFuse 左侧 -> 水平向左 -> 垂直向上（L形折线） -->
+  <path d="M 280 275 L 120 275 L 120 134" stroke="#e67e22" stroke-width="1.5" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
+  <text x="200" y="268" text-anchor="middle" font-size="11" fill="#e67e22">读 ROTPK1 / PROD</text>
+
+  <!-- bootloader 线：eFuse 上方 -> 垂直向上（直线） -->
+  <line x1="360" y1="240" x2="360" y2="134" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
+  <text x="375" y="190" font-size="11" fill="#e67e22">读 ROTPK1 / PROD</text>
+</svg>
