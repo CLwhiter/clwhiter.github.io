@@ -1,7 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#1a1a2e"/>
-  <text x="600" y="280" text-anchor="middle" fill="#e0e0e0" font-size="36" font-family="sans-serif">芯驰 E3640 安全启动剖析</text>
-  <text x="600" y="340" text-anchor="middle" fill="#e0e0e0" font-size="28" font-family="sans-serif">五道校验关 · 信任链 · Boot Package</text>
-  <text x="600" y="420" text-anchor="middle" fill="#888" font-size="18" font-family="sans-serif">Semidrive E3640 Secure Boot</text>
-  <text x="600" y="560" text-anchor="middle" fill="#555" font-size="16" font-family="sans-serif">占位图 · 作者后续生成</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0f23"/>
+      <stop offset="100%" stop-color="#1a1a3e"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7b68ee" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- 网格背景 -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+  <!-- 盾牌/锁图形（上方中央） -->
+  <g transform="translate(600, 140)">
+    <!-- 发光 -->
+    <ellipse cx="0" cy="0" rx="80" ry="90" fill="#00d4ff" opacity="0.1" filter="url(#blur2)"/>
+    <!-- 盾牌 -->
+    <path d="M 0,-70 L 55,-50 L 55,10 Q 55,55 0,75 Q -55,55 -55,10 L -55,-50 Z"
+          fill="none" stroke="#00d4ff" stroke-width="2.5" opacity="0.9"/>
+    <!-- 锁芯 -->
+    <rect x="-18" y="-15" width="36" height="30" rx="4" fill="none" stroke="#ffd700" stroke-width="2"/>
+    <path d="M -10,-15 L -10,-28 Q -10,-40 0,-40 Q 10,-40 10,-28 L 10,-15"
+          fill="none" stroke="#ffd700" stroke-width="2"/>
+    <circle cx="0" cy="-2" r="4" fill="#ffd700"/>
+    <line x1="0" y1="2" x2="0" y2="10" stroke="#ffd700" stroke-width="2"/>
+  </g>
+  <!-- 链式启动节点 -->
+  <g transform="translate(600, 370)">
+    <!-- 连接线发光 -->
+    <line x1="-280" y1="0" x2="280" y2="0" stroke="url(#glow)" stroke-width="3" filter="url(#blur1)" opacity="0.6"/>
+    <line x1="-280" y1="0" x2="280" y2="0" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.8"/>
+    <!-- bootROM -->
+    <g transform="translate(-280, 0)">
+      <rect x="-55" y="-35" width="110" height="70" rx="8" fill="#0f0f23" stroke="#00d4ff" stroke-width="2"/>
+      <text x="0" y="-5" text-anchor="middle" font-size="16" font-weight="bold" fill="#00d4ff">bootROM</text>
+      <text x="0" y="18" text-anchor="middle" font-size="10" fill="#8888aa">片内 ROM · 可信根</text>
+    </g>
+    <!-- bootloader -->
+    <g transform="translate(0, 0)">
+      <rect x="-55" y="-35" width="110" height="70" rx="8" fill="#0f0f23" stroke="#7b68ee" stroke-width="2"/>
+      <text x="0" y="-5" text-anchor="middle" font-size="14" font-weight="bold" fill="#7b68ee">bootloader</text>
+      <text x="0" y="18" text-anchor="middle" font-size="10" fill="#8888aa">五步校验</text>
+    </g>
+    <!-- APP -->
+    <g transform="translate(280, 0)">
+      <rect x="-55" y="-35" width="110" height="70" rx="8" fill="#0f0f23" stroke="#ffd700" stroke-width="2"/>
+      <text x="0" y="-5" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffd700">APP</text>
+      <text x="0" y="18" text-anchor="middle" font-size="10" fill="#8888aa">可信镜像</text>
+    </g>
+    <!-- 箭头 -->
+    <polygon points="-165,-8 -150,0 -165,8" fill="#00d4ff"/>
+    <polygon points="115,-8 130,0 115,8" fill="#7b68ee"/>
+  </g>
+  <!-- eFuse 熔丝条（下方） -->
+  <g transform="translate(600, 510)">
+    <text x="0" y="-20" text-anchor="middle" font-size="11" fill="#8888aa" letter-spacing="3">eFuse OTP · 一次性可编程</text>
+    <g>
+      <!-- 32 个熔丝位，部分"烧断"（金色） -->
+      <rect x="-160" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+      <rect x="-148" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="-136" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.7"/>
+      <rect x="-124" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+      <rect x="-112" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="-100" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="-88" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.8"/>
+      <rect x="-76" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="-64" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+      <rect x="-52" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.6"/>
+      <rect x="-40" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="-28" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+      <rect x="-16" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="-4" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.7"/>
+      <rect x="8" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="20" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+      <rect x="32" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.8"/>
+      <rect x="44" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="56" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="68" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+      <rect x="80" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="92" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.7"/>
+      <rect x="104" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+      <rect x="116" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="128" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.8"/>
+      <rect x="140" y="0" width="8" height="16" rx="1" fill="#333355"/>
+      <rect x="152" y="0" width="8" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+    </g>
+    <text x="0" y="38" text-anchor="middle" font-size="9" fill="#555577">ROTPK1 · SHA256 (32 bytes)</text>
+  </g>
+  <!-- 角落装饰 -->
+  <circle cx="60" cy="60" r="30" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.2"/>
+  <circle cx="60" cy="60" r="15" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+  <circle cx="1140" cy="570" r="30" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.2"/>
+  <circle cx="1140" cy="570" r="15" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.3"/>
 </svg>
