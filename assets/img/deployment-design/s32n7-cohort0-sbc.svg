@@ -1,0 +1,67 @@
+<svg width="600" height="460" viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Consolas, SimHei, sans-serif; font-size: 18px; font-weight: bold; fill: #1a237e; }
+      .coh-title { font-family: Consolas, SimHei, sans-serif; font-size: 15px; font-weight: bold; fill: #fff; }
+      .tag { font-family: Consolas, SimHei, sans-serif; font-size: 10px; font-weight: bold; fill: #fff; }
+      .block-label { font-family: Consolas, SimHei, sans-serif; font-size: 12px; font-weight: bold; fill: #37474f; }
+      .core-label { font-family: Consolas, SimHei, sans-serif; font-size: 11px; fill: #263238; }
+      .mem-label { font-family: Consolas, SimHei, sans-serif; font-size: 11px; fill: #455a64; }
+      .peri-label { font-family: Consolas, SimHei, sans-serif; font-size: 10px; fill: #546e7a; }
+      .desc { font-family: Consolas, SimHei, sans-serif; font-size: 11px; fill: #455a64; }
+      .footer { font-family: Consolas, SimHei, sans-serif; font-size: 11px; fill: #78909c; }
+    </style>
+  </defs>
+  <rect width="600" height="460" fill="#ffffff"/>
+
+  <text x="300" y="30" text-anchor="middle" class="title">Cohort 0 · SBC 系统基础组</text>
+
+  <!-- Cohort 0 框 -->
+  <rect x="100" y="55" width="400" height="350" rx="8" fill="#eceff1" stroke="#607d8b" stroke-width="2" stroke-dasharray="8 4" />
+  <rect x="100" y="55" width="400" height="34" rx="8" fill="#607d8b" />
+  <rect x="100" y="77" width="400" height="12" fill="#607d8b" />
+  <text x="300" y="78" text-anchor="middle" class="coh-title">System Base Cohort</text>
+  <rect x="440" y="62" width="46" height="20" rx="10" fill="#c62828" />
+  <text x="463" y="76" text-anchor="middle" class="tag">ASIL D</text>
+
+  <!-- FSS -->
+  <text x="125" y="115" class="block-label">FSS 基础子系统</text>
+  <rect x="125" y="125" width="150" height="42" rx="4" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="200" y="144" text-anchor="middle" class="core-label">CM7_0（锁步）</text>
+  <text x="200" y="159" text-anchor="middle" class="core-label">FSS 固件</text>
+  <rect x="325" y="125" width="150" height="42" rx="4" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="400" y="144" text-anchor="middle" class="core-label">CM7_1（锁步）</text>
+  <text x="400" y="159" text-anchor="middle" class="core-label">辅助管理</text>
+
+  <!-- RAM -->
+  <rect x="125" y="182" width="350" height="30" rx="4" fill="#b0bec5" stroke="#78909c" />
+  <text x="300" y="202" text-anchor="middle" class="mem-label">3 MB 专属 SRAM</text>
+
+  <!-- 外设 -->
+  <text x="125" y="232" class="block-label">系统外设</text>
+  <rect x="125" y="242" width="78" height="24" rx="3" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="164" y="258" text-anchor="middle" class="peri-label">CLOCK</text>
+  <rect x="211" y="242" width="78" height="24" rx="3" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="250" y="258" text-anchor="middle" class="peri-label">RESET</text>
+  <rect x="297" y="242" width="78" height="24" rx="3" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="336" y="258" text-anchor="middle" class="peri-label">POWER</text>
+  <rect x="383" y="242" width="78" height="24" rx="3" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="422" y="258" text-anchor="middle" class="peri-label">XRDC</text>
+  <rect x="125" y="272" width="78" height="24" rx="3" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="164" y="288" text-anchor="middle" class="peri-label">FCCU</text>
+  <rect x="211" y="272" width="78" height="24" rx="3" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="250" y="288" text-anchor="middle" class="peri-label">HSE2</text>
+  <rect x="297" y="272" width="78" height="24" rx="3" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="336" y="288" text-anchor="middle" class="peri-label">WATCHDOG</text>
+  <rect x="383" y="272" width="78" height="24" rx="3" fill="#cfd8dc" stroke="#90a4ae" />
+  <text x="422" y="288" text-anchor="middle" class="peri-label">XSPI</text>
+
+  <!-- 职责 -->
+  <text x="125" y="320" class="block-label">核心职责</text>
+  <text x="125" y="340" class="desc">• PaCo 分区契约解析 · XRDC 硬件隔离配置</text>
+  <text x="125" y="357" class="desc">• 全芯片安全启动 · 各 Cohort 镜像校验与启动调度</text>
+  <text x="125" y="374" class="desc">• 全局故障收集（C-FCCU）· Cohort 独立复位管理</text>
+  <text x="125" y="391" class="desc">• HSE 访问权限策略 · 芯片生命周期管理</text>
+
+  <text x="300" y="430" text-anchor="middle" class="footer">单 UENV · NXP 专用 RTOS · 无 Hypervisor · 上电第一个启动</text>
+</svg>

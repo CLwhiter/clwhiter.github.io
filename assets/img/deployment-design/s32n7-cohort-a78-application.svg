@@ -1,0 +1,92 @@
+<svg width="900" height="480" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Consolas, SimHei, sans-serif; font-size: 20px; font-weight: bold; fill: #1a237e; }
+      .subtitle { font-family: Consolas, SimHei, sans-serif; font-size: 13px; fill: #546e7a; }
+      .coh-title { font-family: Consolas, SimHei, sans-serif; font-size: 15px; font-weight: bold; fill: #fff; }
+      .tag { font-family: Consolas, SimHei, sans-serif; font-size: 10px; font-weight: bold; fill: #fff; }
+      .block-label { font-family: Consolas, SimHei, sans-serif; font-size: 12px; font-weight: bold; fill: #37474f; }
+      .core-label { font-family: Consolas, SimHei, sans-serif; font-size: 10px; fill: #263238; }
+      .mem-label { font-family: Consolas, SimHei, sans-serif; font-size: 10px; fill: #455a64; }
+      .peri-label { font-family: Consolas, SimHei, sans-serif; font-size: 9px; fill: #546e7a; }
+      .func-label { font-family: Consolas, SimHei, sans-serif; font-size: 10px; fill: #37474f; }
+      .note { font-family: Consolas, SimHei, sans-serif; font-size: 10px; fill: #e65100; }
+      .footer { font-family: Consolas, SimHei, sans-serif; font-size: 11px; fill: #78909c; }
+    </style>
+  </defs>
+  <rect width="900" height="480" fill="#ffffff"/>
+
+  <text x="450" y="32" text-anchor="middle" class="title">应用服务域 · Cohort 5 ~ 6（Cortex-A78AE · Linux）</text>
+  <text x="450" y="52" text-anchor="middle" class="subtitle">LPDDR5X DRAM 分配给 A 核使用 · 裸机 Yocto Linux · 默认 Split 模式</text>
+
+  <!-- ==================== Cohort 5: 整车服务 ==================== -->
+  <rect x="40" y="75" width="400" height="350" rx="8" fill="#fff8e1" stroke="#f9a825" stroke-width="2" stroke-dasharray="8 4" />
+  <rect x="40" y="75" width="400" height="34" rx="8" fill="#f9a825" />
+  <rect x="40" y="97" width="400" height="12" fill="#f9a825" />
+  <text x="240" y="98" text-anchor="middle" class="coh-title">Cohort 5 · 整车服务与数据平台</text>
+  <rect x="370" y="82" width="54" height="20" rx="10" fill="#2e7d32" />
+  <text x="397" y="96" text-anchor="middle" class="tag">QM / B</text>
+
+  <text x="65" y="130" class="block-label">APS · 2 个 Cluster（4 核 Split）</text>
+  <rect x="65" y="140" width="150" height="48" rx="4" fill="#fff9c4" stroke="#fdd835" />
+  <text x="140" y="158" text-anchor="middle" class="core-label">Cluster 0</text>
+  <text x="140" y="175" text-anchor="middle" class="core-label">A78_0 / A78_1</text>
+  <rect x="225" y="140" width="150" height="48" rx="4" fill="#fff9c4" stroke="#fdd835" />
+  <text x="300" y="158" text-anchor="middle" class="core-label">Cluster 1</text>
+  <text x="300" y="175" text-anchor="middle" class="core-label">A78_2 / A78_3</text>
+
+  <rect x="65" y="200" width="350" height="28" rx="4" fill="#fff176" stroke="#fdd835" />
+  <text x="240" y="219" text-anchor="middle" class="mem-label">LPDDR5X DRAM（大容量内存池）</text>
+
+  <text x="65" y="246" class="block-label">高速外设</text>
+  <rect x="65" y="256" width="75" height="22" rx="3" fill="#fff9c4" stroke="#fdd835" />
+  <text x="102" y="271" text-anchor="middle" class="peri-label">UFS</text>
+  <rect x="148" y="256" width="75" height="22" rx="3" fill="#fff9c4" stroke="#fdd835" />
+  <text x="185" y="271" text-anchor="middle" class="peri-label">PCIe</text>
+  <rect x="231" y="256" width="75" height="22" rx="3" fill="#fff9c4" stroke="#fdd835" />
+  <text x="268" y="271" text-anchor="middle" class="peri-label">以太网</text>
+  <rect x="314" y="256" width="75" height="22" rx="3" fill="#fff9c4" stroke="#fdd835" />
+  <text x="351" y="271" text-anchor="middle" class="peri-label">USB</text>
+
+  <text x="65" y="305" class="block-label">功能覆盖</text>
+  <text x="65" y="325" class="func-label">• 全局 OTA 编排与版本管理</text>
+  <text x="65" y="341" class="func-label">• 车辆数据中台与上云对接</text>
+  <text x="65" y="357" class="func-label">• 远程诊断与日志分析</text>
+  <text x="65" y="373" class="func-label">• SOA 服务编排（SOME/IP 注册与路由）</text>
+  <text x="65" y="389" class="func-label">• TSP 车云中间件</text>
+
+  <text x="65" y="412" class="note">基础服务域，与 Cohort6 硬件隔离保证高可用</text>
+
+  <!-- ==================== Cohort 6: 边缘计算 ==================== -->
+  <rect x="460" y="75" width="400" height="350" rx="8" fill="#fff8e1" stroke="#f9a825" stroke-width="2" stroke-dasharray="8 4" />
+  <rect x="460" y="75" width="400" height="34" rx="8" fill="#f9a825" />
+  <rect x="460" y="97" width="400" height="12" fill="#f9a825" />
+  <text x="660" y="98" text-anchor="middle" class="coh-title">Cohort 6 · 智能应用与边缘计算</text>
+  <rect x="790" y="82" width="54" height="20" rx="10" fill="#2e7d32" />
+  <text x="817" y="96" text-anchor="middle" class="tag">QM</text>
+
+  <text x="485" y="130" class="block-label">APS · 2 个 Cluster（4 核 Split）+ NPU</text>
+  <rect x="485" y="140" width="150" height="48" rx="4" fill="#fff9c4" stroke="#fdd835" />
+  <text x="560" y="158" text-anchor="middle" class="core-label">Cluster 0</text>
+  <text x="560" y="175" text-anchor="middle" class="core-label">A78_4 / A78_5</text>
+  <rect x="645" y="140" width="150" height="48" rx="4" fill="#fff9c4" stroke="#fdd835" />
+  <text x="720" y="158" text-anchor="middle" class="core-label">Cluster 1</text>
+  <text x="720" y="175" text-anchor="middle" class="core-label">A78_6 / A78_7</text>
+
+  <rect x="485" y="200" width="350" height="28" rx="4" fill="#d1c4e9" stroke="#9575cd" />
+  <text x="660" y="219" text-anchor="middle" class="mem-label">eIQ Neutron NPU（边缘 AI 加速）</text>
+
+  <rect x="485" y="236" width="350" height="28" rx="4" fill="#fff176" stroke="#fdd835" />
+  <text x="660" y="255" text-anchor="middle" class="mem-label">LPDDR5X DRAM（大容量内存池）</text>
+
+  <text x="485" y="285" class="block-label">功能覆盖</text>
+  <text x="485" y="305" class="func-label">• 预测性维护（电池 SOH · 底盘磨损）</text>
+  <text x="485" y="321" class="func-label">• 边缘 AI 推理（驾驶行为 · 能耗优化）</text>
+  <text x="485" y="337" class="func-label">• ADAS 结果后处理与安全校验</text>
+  <text x="485" y="353" class="func-label">• 整车安全审计与入侵溯源</text>
+  <text x="485" y="369" class="func-label">• 数据闭环与影子模式</text>
+
+  <text x="485" y="400" class="note">增值业务域，崩溃不影响 Cohort5 基础服务</text>
+
+  <text x="450" y="455" text-anchor="middle" class="footer">单 UENV · 裸机 Yocto Linux · 无 Hypervisor · 默认 Split 模式（无微秒级闭环，锁步白砍算力）</text>
+</svg>

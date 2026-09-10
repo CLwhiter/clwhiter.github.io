@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 510" width="1000" height="510" font-family="Consolas, SimHei, sans-serif">
+  <defs>
+    <marker id="arr-s1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="510" fill="#fafafa"/>
+  <text x="500" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">阶段一：域集中——独立的座舱域与智驾域控制器</text>
+  <text x="500" y="52" text-anchor="middle" font-size="11" fill="#64748b">座舱 SoC + MCU · 智驾 AI SoC · 域间以太网 / CAN 互联（毫秒级）</text>
+
+  <!-- Cockpit domain -->
+  <rect x="50" y="76" width="400" height="310" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="50" y="76" width="400" height="30" rx="8" fill="#3b82f6"/>
+  <rect x="50" y="98" width="400" height="8" fill="#3b82f6"/>
+  <text x="250" y="96" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">座舱域控制器</text>
+
+  <rect x="75" y="126" width="350" height="80" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="250" y="148" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a8a">座舱 SoC（8155/8295 · X9 等）</text>
+  <text x="250" y="168" text-anchor="middle" font-size="9.5" fill="#475569">Android / Linux · 仪表 · 中控 · 娱乐 · 语音</text>
+  <text x="250" y="186" text-anchor="middle" font-size="9" fill="#94a3b8">Cortex-A 大核 · MMU · 非实时（QM）</text>
+
+  <line x1="250" y1="206" x2="250" y2="230" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-s1)"/>
+  <line x1="270" y1="236" x2="270" y2="212" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-s1)"/>
+  <text x="305" y="222" text-anchor="middle" font-size="8.5" fill="#64748b">SPI / UART / CAN</text>
+
+  <rect x="75" y="242" width="350" height="80" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+  <text x="250" y="264" text-anchor="middle" font-size="11" font-weight="bold" fill="#78350f">MCU（S32K · TC3xx 等）</text>
+  <text x="250" y="284" text-anchor="middle" font-size="9.5" fill="#475569">RTOS / AUTOSAR CP · CAN/LIN 收发</text>
+  <text x="250" y="302" text-anchor="middle" font-size="9.5" fill="#475569">休眠唤醒 · 车身控制 · SoC 健康监控</text>
+
+  <text x="250" y="352" text-anchor="middle" font-size="9" fill="#64748b">应用 + 实时 · 芯片级物理分离 · 独立开发与 OTA</text>
+
+  <!-- ADAS domain -->
+  <rect x="550" y="76" width="400" height="310" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <rect x="550" y="76" width="400" height="30" rx="8" fill="#0d9488"/>
+  <rect x="550" y="98" width="400" height="8" fill="#0d9488"/>
+  <text x="750" y="96" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">智驾域控制器</text>
+
+  <rect x="575" y="126" width="350" height="34" rx="4" fill="#ffffff" stroke="#5eead4" stroke-width="1"/>
+  <text x="750" y="147" text-anchor="middle" font-size="9.5" fill="#475569">摄像头 ×N · 雷达 · 激光雷达 · 惯导</text>
+
+  <rect x="575" y="174" width="350" height="110" rx="4" fill="#ffffff" stroke="#0d9488" stroke-width="1"/>
+  <text x="750" y="196" text-anchor="middle" font-size="11" font-weight="bold" fill="#115e59">智驾 AI SoC（Orin-X · 征程 5 等）</text>
+  <text x="750" y="216" text-anchor="middle" font-size="9.5" fill="#475569">Linux / QNX · 感知 · 融合 · 规控</text>
+  <text x="750" y="234" text-anchor="middle" font-size="9.5" fill="#475569">大算力 NPU · 传感器接入</text>
+  <text x="750" y="252" text-anchor="middle" font-size="9" fill="#94a3b8">安全岛 / 锁步核承载安全关键职责</text>
+  <text x="750" y="268" text-anchor="middle" font-size="9" fill="#94a3b8">控制输出经 CAN 交底盘 / 动力域执行</text>
+
+  <text x="750" y="352" text-anchor="middle" font-size="9" fill="#64748b">感知 + 规控 · 安全岛隔离 · 独立开发与 OTA</text>
+
+  <!-- inter-domain link -->
+  <line x1="450" y1="200" x2="546" y2="200" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-s1)"/>
+  <line x1="550" y1="220" x2="454" y2="220" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-s1)"/>
+  <text x="500" y="188" text-anchor="middle" font-size="9" fill="#64748b">以太网 / CAN</text>
+  <text x="500" y="240" text-anchor="middle" font-size="9" fill="#94a3b8">毫秒级</text>
+
+  <!-- bottom note -->
+  <rect x="50" y="416" width="900" height="36" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="500" y="439" text-anchor="middle" font-size="10" fill="#475569">各域独立开发 · 独立 OTA · 物理分离保证隔离；域间经网关互联，跨域数据毫秒级</text>
+
+  <text x="500" y="484" text-anchor="middle" font-size="10" fill="#999999">阶段一部署本质：分而治之——域内解决应用与实时的矛盾，域间用网关解耦</text>
+</svg>

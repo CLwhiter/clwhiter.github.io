@@ -1,0 +1,158 @@
+<svg width="1200" height="740" viewBox="0 0 1200 740" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Consolas, SimHei, sans-serif; font-size: 20px; font-weight: bold; fill: #1a237e; }
+      .subtitle { font-family: Consolas, SimHei, sans-serif; font-size: 13px; fill: #546e7a; }
+      .coh-title { font-family: Consolas, SimHei, sans-serif; font-size: 15px; font-weight: bold; fill: #fff; }
+      .tag-d { font-family: Consolas, SimHei, sans-serif; font-size: 10px; font-weight: bold; fill: #fff; }
+      .tag-b { font-family: Consolas, SimHei, sans-serif; font-size: 10px; font-weight: bold; fill: #fff; }
+      .block-label { font-family: Consolas, SimHei, sans-serif; font-size: 12px; font-weight: bold; fill: #37474f; }
+      .core-label { font-family: Consolas, SimHei, sans-serif; font-size: 10px; fill: #263238; }
+      .mem-label { font-family: Consolas, SimHei, sans-serif; font-size: 10px; fill: #455a64; }
+      .peri-label { font-family: Consolas, SimHei, sans-serif; font-size: 9px; fill: #546e7a; }
+      .func-label { font-family: Consolas, SimHei, sans-serif; font-size: 10px; fill: #37474f; }
+      .note { font-family: Consolas, SimHei, sans-serif; font-size: 10px; fill: #e65100; }
+      .footer { font-family: Consolas, SimHei, sans-serif; font-size: 11px; fill: #78909c; }
+    </style>
+  </defs>
+  <rect width="1200" height="740" fill="#ffffff"/>
+
+  <text x="600" y="32" text-anchor="middle" class="title">实时控制域 · Cohort 1 ~ 4（Cortex-R52）</text>
+  <text x="600" y="52" text-anchor="middle" class="subtitle">ASIL D 域独占完整 RTU · ASIL B 域共享 RTU 2 · 全部裸机 AUTOSAR Classic</text>
+
+  <!-- ==================== Cohort 1: 动力总成 ==================== -->
+  <rect x="40" y="75" width="540" height="290" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2" stroke-dasharray="8 4" />
+  <rect x="40" y="75" width="540" height="34" rx="8" fill="#c62828" />
+  <rect x="40" y="97" width="540" height="12" fill="#c62828" />
+  <text x="310" y="98" text-anchor="middle" class="coh-title">Cohort 1 · 动力总成</text>
+  <rect x="510" y="82" width="54" height="20" rx="10" fill="#b71c1c" />
+  <text x="537" y="96" text-anchor="middle" class="tag-d">ASIL D</text>
+
+  <text x="65" y="130" class="block-label">RTU 0（完整独占 · 4 核全 Lock）</text>
+  <rect x="65" y="140" width="220" height="48" rx="4" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="175" y="158" text-anchor="middle" class="core-label">Cluster 0 · R52_0 / R52_1</text>
+  <text x="175" y="175" text-anchor="middle" class="core-label">双核锁步（DCLS）</text>
+  <rect x="335" y="140" width="220" height="48" rx="4" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="445" y="158" text-anchor="middle" class="core-label">Cluster 1 · R52_2 / R52_3</text>
+  <text x="445" y="175" text-anchor="middle" class="core-label">双核锁步（DCLS）</text>
+
+  <rect x="65" y="200" width="490" height="28" rx="4" fill="#ef9a9a" stroke="#e57373" />
+  <text x="310" y="219" text-anchor="middle" class="mem-label">10 MB 专属 SRAM</text>
+
+  <text x="65" y="246" class="block-label">动力域外设</text>
+  <rect x="65" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="105" y="271" text-anchor="middle" class="peri-label">CAN</text>
+  <rect x="153" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="193" y="271" text-anchor="middle" class="peri-label">SPI</text>
+  <rect x="241" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="281" y="271" text-anchor="middle" class="peri-label">I2C</text>
+  <rect x="329" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="369" y="271" text-anchor="middle" class="peri-label">LIN</text>
+  <rect x="417" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="457" y="271" text-anchor="middle" class="peri-label">ADC / PWM</text>
+
+  <text x="65" y="300" class="func-label">电机控制 · BMS 电池管理 · OBC 车载充电 · DC-DC 控制 · 动力域故障诊断</text>
+  <text x="65" y="328" class="note">独占 RTU = 硬件级故障隔离，时钟/电源故障不波及其他域</text>
+  <text x="65" y="350" class="note">单 UENV · 裸机 AUTOSAR Classic · 无 Hypervisor</text>
+
+  <!-- ==================== Cohort 2: 底盘 ==================== -->
+  <rect x="620" y="75" width="540" height="290" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2" stroke-dasharray="8 4" />
+  <rect x="620" y="75" width="540" height="34" rx="8" fill="#c62828" />
+  <rect x="620" y="97" width="540" height="12" fill="#c62828" />
+  <text x="890" y="98" text-anchor="middle" class="coh-title">Cohort 2 · 底盘与运动控制</text>
+  <rect x="1090" y="82" width="54" height="20" rx="10" fill="#b71c1c" />
+  <text x="1117" y="96" text-anchor="middle" class="tag-d">ASIL D</text>
+
+  <text x="645" y="130" class="block-label">RTU 1（完整独占 · 4 核全 Lock）</text>
+  <rect x="645" y="140" width="220" height="48" rx="4" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="755" y="158" text-anchor="middle" class="core-label">Cluster 0 · R52_0 / R52_1</text>
+  <text x="755" y="175" text-anchor="middle" class="core-label">双核锁步 · 底盘控制</text>
+  <rect x="915" y="140" width="220" height="48" rx="4" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="1025" y="158" text-anchor="middle" class="core-label">Cluster 1 · R52_2 / R52_3</text>
+  <text x="1025" y="175" text-anchor="middle" class="core-label">双核锁步 · ADAS 安全监控</text>
+
+  <rect x="645" y="200" width="490" height="28" rx="4" fill="#ef9a9a" stroke="#e57373" />
+  <text x="890" y="219" text-anchor="middle" class="mem-label">10 MB 专属 SRAM</text>
+
+  <text x="645" y="246" class="block-label">底盘域外设</text>
+  <rect x="645" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="685" y="271" text-anchor="middle" class="peri-label">CAN</text>
+  <rect x="733" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="773" y="271" text-anchor="middle" class="peri-label">SPI</text>
+  <rect x="821" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="861" y="271" text-anchor="middle" class="peri-label">SENT</text>
+  <rect x="909" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="949" y="271" text-anchor="middle" class="peri-label">PWM</text>
+  <rect x="997" y="256" width="80" height="22" rx="3" fill="#ffcdd2" stroke="#ef5350" />
+  <text x="1037" y="271" text-anchor="middle" class="peri-label">定时器</text>
+
+  <text x="645" y="300" class="func-label">EPS 转向 · ESC/ESP · 线控制动 · 悬架 · 整车动力学 VDC</text>
+  <text x="645" y="316" class="func-label">+ ADAS 安全监控（智驾控制意图校验 · MRM 最小风险状态执行）</text>
+  <text x="645" y="340" class="note">Cluster0 跑底盘控制，Cluster1 跑 ADAS 安全监控，同 Cohort 共享 ASIL D 认证边界</text>
+  <text x="645" y="358" class="note">单 UENV · 裸机 AUTOSAR Classic · 无 Hypervisor</text>
+
+  <!-- ==================== Cohort 3: 车身 ==================== -->
+  <rect x="40" y="395" width="540" height="290" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="2" stroke-dasharray="8 4" />
+  <rect x="40" y="395" width="540" height="34" rx="8" fill="#ef6c00" />
+  <rect x="40" y="417" width="540" height="12" fill="#ef6c00" />
+  <text x="310" y="418" text-anchor="middle" class="coh-title">Cohort 3 · 车身与舒适</text>
+  <rect x="510" y="402" width="54" height="20" rx="10" fill="#e65100" />
+  <text x="537" y="416" text-anchor="middle" class="tag-b">ASIL B</text>
+
+  <text x="65" y="450" class="block-label">RTU 2 · Cluster 0（2 核 Split）</text>
+  <rect x="65" y="460" width="220" height="48" rx="4" fill="#ffe0b2" stroke="#ffb74d" />
+  <text x="175" y="478" text-anchor="middle" class="core-label">Cluster 0 · R52_0 / R52_1</text>
+  <text x="175" y="495" text-anchor="middle" class="core-label">独立运行，不锁步</text>
+
+  <rect x="65" y="520" width="490" height="28" rx="4" fill="#ffcc80" stroke="#ffb74d" />
+  <text x="310" y="539" text-anchor="middle" class="mem-label">5 MB 专属 SRAM</text>
+
+  <text x="65" y="566" class="block-label">车身域外设</text>
+  <rect x="65" y="576" width="80" height="22" rx="3" fill="#ffe0b2" stroke="#ffb74d" />
+  <text x="105" y="591" text-anchor="middle" class="peri-label">LIN</text>
+  <rect x="153" y="576" width="80" height="22" rx="3" fill="#ffe0b2" stroke="#ffb74d" />
+  <text x="193" y="591" text-anchor="middle" class="peri-label">CAN</text>
+  <rect x="241" y="576" width="80" height="22" rx="3" fill="#ffe0b2" stroke="#ffb74d" />
+  <text x="281" y="591" text-anchor="middle" class="peri-label">GPIO</text>
+  <rect x="329" y="576" width="80" height="22" rx="3" fill="#ffe0b2" stroke="#ffb74d" />
+  <text x="369" y="591" text-anchor="middle" class="peri-label">PWM</text>
+
+  <text x="65" y="620" class="func-label">BCM 车身控制 · 灯光/门窗/座椅 · 热管理/空调</text>
+  <text x="65" y="636" class="func-label">泊车辅助执行 · 休眠唤醒调度</text>
+  <text x="65" y="662" class="note">与 Cohort4 共享 RTU 2，时钟/电源故障域共担（ASIL B 可接受）</text>
+  <text x="65" y="680" class="note">单 UENV · 裸机 AUTOSAR Classic · 无 Hypervisor</text>
+
+  <!-- ==================== Cohort 4: 网关 ==================== -->
+  <rect x="620" y="395" width="540" height="290" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="2" stroke-dasharray="8 4" />
+  <rect x="620" y="395" width="540" height="34" rx="8" fill="#ef6c00" />
+  <rect x="620" y="417" width="540" height="12" fill="#ef6c00" />
+  <text x="890" y="418" text-anchor="middle" class="coh-title">Cohort 4 · 中央网关与通信</text>
+  <rect x="1090" y="402" width="54" height="20" rx="10" fill="#e65100" />
+  <text x="1117" y="416" text-anchor="middle" class="tag-b">ASIL B</text>
+
+  <text x="645" y="450" class="block-label">RTU 2 · Cluster 1（2 核 Split）+ RCU 独立通信核</text>
+  <rect x="645" y="460" width="220" height="48" rx="4" fill="#ffe0b2" stroke="#ffb74d" />
+  <text x="755" y="478" text-anchor="middle" class="core-label">Cluster 1 · R52_2 / R52_3</text>
+  <text x="755" y="495" text-anchor="middle" class="core-label">业务策略层（AUTOSAR）</text>
+  <rect x="915" y="460" width="220" height="48" rx="4" fill="#d7ccc8" stroke="#a1887f" />
+  <text x="1025" y="478" text-anchor="middle" class="core-label">RCU · 独立 R52 + TCM</text>
+  <text x="1025" y="495" text-anchor="middle" class="core-label">硬件通信卸载</text>
+
+  <rect x="645" y="520" width="490" height="28" rx="4" fill="#ffcc80" stroke="#ffb74d" />
+  <text x="890" y="539" text-anchor="middle" class="mem-label">5 MB 专属 SRAM</text>
+
+  <text x="645" y="566" class="block-label">通信外设</text>
+  <rect x="645" y="576" width="100" height="22" rx="3" fill="#ffe0b2" stroke="#ffb74d" />
+  <text x="695" y="591" text-anchor="middle" class="peri-label">NETC4 TSN</text>
+  <rect x="753" y="576" width="100" height="22" rx="3" fill="#ffe0b2" stroke="#ffb74d" />
+  <text x="803" y="591" text-anchor="middle" class="peri-label">CAN Hub</text>
+  <rect x="861" y="576" width="100" height="22" rx="3" fill="#ffe0b2" stroke="#ffb74d" />
+  <text x="911" y="591" text-anchor="middle" class="peri-label">LIN / FlexRay</text>
+
+  <text x="645" y="620" class="func-label">路由策略 · TSN 配置 · IDPS 入侵检测 · DoIP 诊断网关</text>
+  <text x="645" y="636" class="func-label">SOME/IP 基础服务 · 防火墙策略</text>
+  <text x="645" y="662" class="note">双 UENV：RCU 跑底层报文卸载，业务 R52 跑高层策略，不占业务核</text>
+  <text x="645" y="680" class="note">裸机 AUTOSAR Classic · 无 Hypervisor</text>
+
+  <text x="600" y="715" text-anchor="middle" class="footer">虚线框 = XRDC 硬件强制隔离边界 · R 核使用片上 SRAM，不占用 LPDDR5X DRAM</text>
+</svg>

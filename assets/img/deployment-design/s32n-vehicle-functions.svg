@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 624 404" height="404">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap');
+      .cls-1 {
+        mask: url(#mask);
+      }
+
+      .cls-2 {
+        font-size: 12px;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: Poppins-Regular, Poppins;
+      }
+
+      .cls-3, .cls-4 {
+        font-size: 14px;
+      }
+
+      .cls-5 {
+        fill: #f9b500;
+      }
+
+      .cls-6 {
+        fill: #215bd6;
+      }
+
+      .cls-7 {
+        fill: #008a00;
+      }
+
+      .cls-8 {
+        mask: url(#mask-2);
+      }
+
+      .cls-9 {
+        mask: url(#mask-3);
+      }
+
+      .cls-10 {
+        mask: url(#mask-4);
+      }
+
+      .cls-11 {
+        mask: url(#mask-5);
+      }
+
+      .cls-12 {
+        mask: url(#mask-7);
+      }
+
+      .cls-13 {
+        mask: url(#mask-6);
+      }
+
+      .cls-14 {
+        mask: url(#mask-1);
+      }
+
+      .cls-15 {
+        mask: url(#mask-9);
+      }
+
+      .cls-16 {
+        mask: url(#mask-8);
+      }
+
+      .cls-17 {
+        fill: #fff;
+      }
+
+      .cls-18 {
+        font-size: 16px;
+      }
+
+      .cls-18, .cls-4 {
+        font-family: Poppins-SemiBold, Poppins;
+        font-weight: 600;
+      }
+
+      .cls-19 {
+        fill: #ff7400;
+      }
+
+      .cls-20 {
+        fill: none;
+        stroke: #d4cfc5;
+        stroke-dasharray: 4 6;
+      }
+
+      .cls-21 {
+        fill: #c6eb02;
+      }
+
+      .cls-22 {
+        mask: url(#mask-10);
+      }
+
+      .cls-23 {
+        mask: url(#mask-14);
+      }
+
+      .cls-24 {
+        mask: url(#mask-11);
+      }
+
+      .cls-25 {
+        mask: url(#mask-16);
+      }
+
+      .cls-26 {
+        mask: url(#mask-13);
+      }
+
+      .cls-27 {
+        mask: url(#mask-12);
+      }
+
+      .cls-28 {
+        mask: url(#mask-15);
+      }
+
+      .cls-29 {
+        fill: #3ecafb;
+      }
+    </style>
+    <mask id="mask" x="198" y="43" width="16" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-12-inside-1_2016_145" data-name="path-12-inside-1 2016 145">
+        <path class="cls-17" d="M198,43h15v20h-15v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-1" x="213" y="43" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-14-inside-2_2016_145" data-name="path-14-inside-2 2016 145">
+        <path class="cls-17" d="M213,43h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-2" x="263" y="43" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-16-inside-3_2016_145" data-name="path-16-inside-3 2016 145">
+        <path class="cls-17" d="M263,43h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-3" x="313" y="43" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-18-inside-4_2016_145" data-name="path-18-inside-4 2016 145">
+        <path class="cls-17" d="M313,43h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-4" x="363" y="43" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-20-inside-5_2016_145" data-name="path-20-inside-5 2016 145">
+        <path class="cls-17" d="M363,43h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-5" x="249" y="95" width="14" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-24-inside-6_2016_145" data-name="path-24-inside-6 2016 145">
+        <path class="cls-17" d="M249,95h13v20h-13v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-6" x="262" y="95" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-26-inside-7_2016_145" data-name="path-26-inside-7 2016 145">
+        <path class="cls-17" d="M262,95h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-7" x="312" y="95" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-28-inside-8_2016_145" data-name="path-28-inside-8 2016 145">
+        <path class="cls-17" d="M312,95h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-8" x="362" y="95" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-30-inside-9_2016_145" data-name="path-30-inside-9 2016 145">
+        <path class="cls-17" d="M362,95h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-9" x="197" y="146" width="16" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-34-inside-10_2016_145" data-name="path-34-inside-10 2016 145">
+        <path class="cls-17" d="M197,146h15v20h-15v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-10" x="212" y="146" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-36-inside-11_2016_145" data-name="path-36-inside-11 2016 145">
+        <path class="cls-17" d="M212,146h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-11" x="262" y="146" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-38-inside-12_2016_145" data-name="path-38-inside-12 2016 145">
+        <path class="cls-17" d="M262,146h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-12" x="312" y="146" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-40-inside-13_2016_145" data-name="path-40-inside-13 2016 145">
+        <path class="cls-17" d="M312,146h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-13" x="362" y="146" width="9" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-42-inside-14_2016_145" data-name="path-42-inside-14 2016 145">
+        <path class="cls-17" d="M362,146h8v20h-8v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-14" x="162" y="197" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-46-inside-15_2016_145" data-name="path-46-inside-15 2016 145">
+        <path class="cls-17" d="M162,197h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-15" x="212" y="197" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-48-inside-16_2016_145" data-name="path-48-inside-16 2016 145">
+        <path class="cls-17" d="M212,197h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+    <mask id="mask-16" x="262" y="197" width="51" height="20" maskUnits="userSpaceOnUse">
+      <g id="path-50-inside-17_2016_145" data-name="path-50-inside-17 2016 145">
+        <path class="cls-17" d="M262,197h50v20h-50v-20Z"/>
+      </g>
+    </mask>
+  </defs>
+  <rect width="624" height="404" fill="#ffffff"/>
+  <path d="M135,227l7.5,4.33v-8.66l-7.5,4.33ZM489,227l-7.5-4.33v8.66l7.5-4.33ZM141.75,227v.75h340.5v-1.5H141.75v.75Z"/>
+  <path class="cls-20" d="M212,15v218"/>
+  <path class="cls-20" d="M162,15v218"/>
+  <path class="cls-20" d="M262,15v218"/>
+  <path class="cls-20" d="M312,15v218"/>
+  <path class="cls-20" d="M362,15v218"/>
+  <path class="cls-20" d="M412,15v218"/>
+  <path class="cls-20" d="M462,15v218"/>
+  <path class="cls-7" d="M198,43h15v20h-15v-20Z"/>
+  <g class="cls-1">
+    <path class="cls-17" d="M213,43h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-21" d="M213,43h50v20h-50v-20Z"/>
+  <g class="cls-14">
+    <path class="cls-17" d="M263,43h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-29" d="M263,43h50v20h-50v-20Z"/>
+  <g class="cls-8">
+    <path class="cls-17" d="M313,43h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-19" d="M313,43h50v20h-50v-20Z"/>
+  <g class="cls-9">
+    <path class="cls-17" d="M363,43h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-5" d="M363,43h50v20h-50v-20Z"/>
+  <g class="cls-10">
+    <path class="cls-17" d="M413,43h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-6" d="M413,43h51v20h-51v-20Z"/>
+  <path class="cls-21" d="M249,95h13v20h-13v-20Z"/>
+  <g class="cls-11">
+    <path class="cls-17" d="M262,95h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-29" d="M262,95h50v20h-50v-20Z"/>
+  <g class="cls-13">
+    <path class="cls-17" d="M312,95h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-19" d="M312,95h50v20h-50v-20Z"/>
+  <g class="cls-12">
+    <path class="cls-17" d="M362,95h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-5" d="M362,95h50v20h-50v-20Z"/>
+  <g class="cls-16">
+    <path class="cls-17" d="M412,95h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-6" d="M412,95h25v20h-25v-20Z"/>
+  <path class="cls-7" d="M197,146h15v20h-15v-20Z"/>
+  <g class="cls-15">
+    <path class="cls-17" d="M212,146h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-21" d="M212,146h50v20h-50v-20Z"/>
+  <g class="cls-22">
+    <path class="cls-17" d="M262,146h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-29" d="M262,146h50v20h-50v-20Z"/>
+  <g class="cls-24">
+    <path class="cls-17" d="M312,146h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-19" d="M312,146h50v20h-50v-20Z"/>
+  <g class="cls-27">
+    <path class="cls-17" d="M362,146h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-5" d="M362,146h8v20h-8v-20Z"/>
+  <g class="cls-26">
+    <path class="cls-17" d="M370,146h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-6" d="M370,146h11v20h-11v-20Z"/>
+  <path class="cls-7" d="M162,197h50v20h-50v-20Z"/>
+  <g class="cls-23">
+    <path class="cls-17" d="M212,197h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-21" d="M212,197h50v20h-50v-20Z"/>
+  <g class="cls-28">
+    <path class="cls-17" d="M262,197h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-29" d="M262,197h50v20h-50v-20Z"/>
+  <g class="cls-25">
+    <path class="cls-17" d="M312,197h-1v20h2v-20h-1Z"/>
+  </g>
+  <path class="cls-19" d="M312,197h8v20h-8v-20Z"/>
+  <circle class="cls-7" cx="29" cy="295.74" r="6"/>
+  <circle class="cls-19" cx="360" cy="295.74" r="6"/>
+  <circle class="cls-21" cx="29" cy="321.87" r="6"/>
+  <circle class="cls-5" cx="360" cy="321.87" r="6"/>
+  <circle class="cls-29" cx="29" cy="348.45" r="6"/>
+  <circle class="cls-6" cx="360" cy="348.45" r="6"/>
+  <text class="cls-3" transform="translate(52.29 221.47)"><tspan x="0" y="0">Real-Time </tspan><tspan x="0" y="16.8">Processing</tspan></text>
+  <text class="cls-3" transform="translate(50.03 301.54)"><tspan x="0" y="0">Vehicle Propulsion and Dynamics</tspan></text>
+  <text class="cls-3" transform="translate(377.77 301.54)"><tspan x="0" y="0">Vehicle Gateway/ Networking</tspan></text>
+  <text class="cls-3" transform="translate(50.03 327.67)"><tspan x="0" y="0">Body and Comfort Strategy</tspan></text>
+  <text class="cls-3" transform="translate(377.33 327.67)"><tspan x="0" y="0">ADAS Sensor Fusion and Functions</tspan></text>
+  <text class="cls-3" transform="translate(50.03 354.24)"><tspan x="0" y="0">Vehicle Mgmt. and General-Purpose</tspan></text>
+  <text class="cls-3" transform="translate(377.77 354.24)"><tspan x="0" y="0">Data and AI Services</tspan></text>
+  <text class="cls-3" transform="translate(500.56 222.22)"><tspan x="0" y="0">Application </tspan><tspan x="0" y="16.8">Processing</tspan></text>
+  <text class="cls-4" transform="translate(249.24 251.34)"><tspan x="0" y="0">Vehicle Functions</tspan></text>
+  <text class="cls-18" transform="translate(357.47 39.83)"><tspan x="0" y="0">S32N79</tspan></text>
+  <text class="cls-18" transform="translate(313.72 91.25)"><tspan x="0" y="0">S32N*</tspan></text>
+  <text class="cls-18" transform="translate(263.72 142.46)"><tspan x="0" y="0">S32N*</tspan></text>
+  <text class="cls-18" transform="translate(207.56 193.38)"><tspan x="0" y="0">S32N55</tspan></text>
+  <text class="cls-2" transform="translate(21.99 389)"><tspan x="0" y="0">*Future S32N device</tspan></text>
+</svg>
