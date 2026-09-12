@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" width="1100" height="600" font-family="Consolas, SimHei, sans-serif" data-generator="fireworks-tech-graph">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arr-amber" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="600" fill="#ffffff"/>
+
+  <text x="550" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">固件签名与验签流程（RSA · RSASSA）</text>
+  <text x="550" y="50" text-anchor="middle" font-size="11" fill="#64748b">签名＝对填充后的摘要做私钥运算，验签＝用公钥恢复摘要再比对 —— 全程不是「加密 / 解密」</text>
+
+  <!-- ================= 厂商端 ================= -->
+  <rect x="40" y="70" width="460" height="420" rx="8" fill="#eceff1" stroke="#607d8b" stroke-width="2" stroke-dasharray="8 4"/>
+  <rect x="40" y="70" width="460" height="30" rx="8" fill="#607d8b"/>
+  <rect x="40" y="92" width="460" height="8" fill="#607d8b"/>
+  <text x="250" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">厂商端 · Signing</text>
+  <rect x="382" y="75" width="108" height="20" rx="10" fill="#c62828"/>
+  <text x="436" y="89" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">私钥不出 HSM</text>
+
+  <rect x="195" y="120" width="250" height="44" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="320" y="147" text-anchor="middle" font-size="12" font-weight="bold" fill="#37474f">固件镜像 firmware.bin</text>
+
+  <line x1="320" y1="164" x2="320" y2="186" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="332" y="180" font-size="9.5" fill="#64748b">SHA-256</text>
+
+  <rect x="195" y="190" width="250" height="44" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="320" y="210" text-anchor="middle" font-size="12" font-weight="bold" fill="#37474f">哈希摘要 Hash</text>
+  <text x="320" y="227" text-anchor="middle" font-size="9.5" fill="#546e7a">SHA-256 → 32 字节</text>
+
+  <line x1="320" y1="234" x2="320" y2="256" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="332" y="250" font-size="9.5" fill="#64748b">PKCS#1 v1.5 / PSS 填充</text>
+
+  <rect x="195" y="260" width="250" height="44" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="320" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#37474f">填充消息 EM</text>
+  <text x="320" y="297" text-anchor="middle" font-size="9.5" fill="#546e7a">0x00 01 FF…FF 00 ‖ Hash</text>
+
+  <line x1="320" y1="304" x2="320" y2="326" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="332" y="320" font-size="9.5" fill="#64748b">RSA 私钥运算</text>
+
+  <rect x="195" y="330" width="250" height="44" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="320" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#37474f">数字签名 Signature</text>
+  <text x="320" y="367" text-anchor="middle" font-size="9.5" fill="#546e7a">sig = EM^d mod n（256 字节）</text>
+
+  <rect x="55" y="330" width="110" height="44" rx="4" fill="#fff8e1" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="110" y="350" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">厂商私钥 d</text>
+  <text x="110" y="366" text-anchor="middle" font-size="9.5" fill="#a16207">HSM 严格保管</text>
+  <line x1="165" y1="352" x2="189" y2="352" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+
+  <line x1="320" y1="374" x2="320" y2="396" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="332" y="390" font-size="9.5" fill="#64748b">打包</text>
+
+  <rect x="195" y="400" width="250" height="44" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="320" y="420" text-anchor="middle" font-size="12" font-weight="bold" fill="#37474f">签名固件包</text>
+  <text x="320" y="437" text-anchor="middle" font-size="9.5" fill="#546e7a">镜像 + 签名 + 公钥（或证书）</text>
+
+  <text x="320" y="472" text-anchor="middle" font-size="9.5" fill="#64748b">签名环境：签名服务器 / HSM，私钥不落地</text>
+
+  <!-- 连接：烧写 Flash -->
+  <path d="M 445 422 L 550 422 L 550 122 L 700 122" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="560" y="276" font-size="9.5" fill="#64748b" transform="rotate(-90 560 276)">烧写 / 存储 Flash</text>
+
+  <!-- ================= MCU 端 ================= -->
+  <rect x="600" y="70" width="460" height="420" rx="8" fill="#eceff1" stroke="#455a64" stroke-width="2" stroke-dasharray="8 4"/>
+  <rect x="600" y="70" width="460" height="30" rx="8" fill="#455a64"/>
+  <rect x="600" y="92" width="460" height="8" fill="#455a64"/>
+  <text x="810" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">MCU 端 · Verification</text>
+  <rect x="936" y="75" width="114" height="20" rx="10" fill="#00695c"/>
+  <text x="993" y="89" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">bootROM 硬件自动执行</text>
+
+  <rect x="705" y="100" width="250" height="44" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="830" y="127" text-anchor="middle" font-size="12" font-weight="bold" fill="#37474f">从 Flash 加载签名固件包</text>
+
+  <line x1="760" y1="144" x2="690" y2="166" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="830" y1="144" x2="830" y2="166" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="900" y1="144" x2="970" y2="166" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="620" y="170" width="140" height="40" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="690" y="195" text-anchor="middle" font-size="11" font-weight="bold" fill="#37474f">公钥（证书）</text>
+  <rect x="760" y="170" width="140" height="40" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="830" y="195" text-anchor="middle" font-size="11" font-weight="bold" fill="#37474f">镜像 Data</text>
+  <rect x="900" y="170" width="140" height="40" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="970" y="195" text-anchor="middle" font-size="11" font-weight="bold" fill="#37474f">签名 Signature</text>
+
+  <line x1="690" y1="210" x2="690" y2="232" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="700" y="226" font-size="9" fill="#64748b">SHA-256</text>
+  <line x1="830" y1="210" x2="830" y2="232" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="840" y="226" font-size="9" fill="#64748b">SHA-256</text>
+  <line x1="970" y1="210" x2="970" y2="232" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="980" y="228" font-size="9" fill="#64748b">公钥运算</text>
+
+  <rect x="620" y="236" width="140" height="44" rx="4" fill="#fff8e1" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="690" y="254" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#92400e">与 eFuse ROTPK 比对</text>
+  <text x="690" y="271" text-anchor="middle" font-size="9" fill="#a16207">公钥哈希 = 指纹 → 公钥可信</text>
+  <rect x="760" y="236" width="140" height="44" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="830" y="256" text-anchor="middle" font-size="11" font-weight="bold" fill="#37474f">摘要 A（本机重算）</text>
+  <text x="830" y="272" text-anchor="middle" font-size="9" fill="#546e7a">镜像未被篡改的证据</text>
+  <rect x="900" y="236" width="140" height="44" rx="4" fill="#cfd8dc" stroke="#90a4ae"/>
+  <text x="970" y="256" text-anchor="middle" font-size="11" font-weight="bold" fill="#37474f">摘要 B（签名恢复）</text>
+  <text x="970" y="272" text-anchor="middle" font-size="9" fill="#546e7a">EM′=sig^e mod n · 去填充</text>
+
+  <line x1="830" y1="280" x2="830" y2="288" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="970" y1="280" x2="933" y2="328" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <polygon points="735,332 830,292 925,332 830,372" fill="#b0bec5" stroke="#78909c"/>
+  <text x="830" y="337" text-anchor="middle" font-size="13" font-weight="bold" fill="#263238">A == B ?</text>
+
+  <line x1="830" y1="372" x2="724" y2="386" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="830" y1="372" x2="940" y2="386" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="620" y="390" width="200" height="40" rx="20" fill="#2e7d32"/>
+  <text x="720" y="415" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">一致 → 镜像合法，跳转执行</text>
+  <rect x="850" y="390" width="190" height="40" rx="20" fill="#c62828"/>
+  <text x="945" y="415" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">不一致 → 拒绝启动</text>
+
+  <text x="830" y="450" text-anchor="middle" font-size="9.5" fill="#64748b">验签顺序：先锚定公钥可信，再校验镜像完整性</text>
+  <text x="830" y="468" text-anchor="middle" font-size="9.5" fill="#64748b">失败行为：进入安全态 / 恢复流程（因芯片而异）</text>
+
+  <!-- 底部 foundation 横带 -->
+  <rect x="40" y="510" width="1020" height="36" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="550" y="533" text-anchor="middle" font-size="10" fill="#475569">摘要：SHA-256 · 填充：PKCS#1 v1.5 / PSS · 签名与加密同为模幂运算，但填充格式与安全语义不同，不可混用（RFC 8017）</text>
+
+  <text x="550" y="578" text-anchor="middle" font-size="10" fill="#999999">摘要 A 为设备本地重算，摘要 B 从签名中恢复：两者一致 ⟺ 镜像未被篡改且确实出自持有私钥的厂商</text>
+</svg>
